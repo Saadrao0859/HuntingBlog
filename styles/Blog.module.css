@@ -1,0 +1,257 @@
+ 
+/* css of blog page  */
+
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  font-family: var(--font-geist-sans);
+}
+
+.popblogs {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.popblogs h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.popblogs h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+/* Blog Items */
+.mainblogiteam {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 35px;
+  margin-bottom: 30px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.mainblogiteam::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
+  transition: left 0.6s ease;
+}
+
+.mainblogiteam:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  border-color: #667eea;
+}
+
+.mainblogiteam:hover::before {
+  left: 100%;
+}
+
+.mainblogiteam a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mainblogiteam h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.mainblogiteam:hover h2 {
+  color: #667eea;
+}
+
+.blogsp {
+  color: #718096;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Loading State */
+.mainblogiteam:first-child {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.mainblogiteam:nth-child(2) {
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.mainblogiteam:nth-child(3) {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.mainblogiteam:nth-child(4) {
+  animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.mainblogiteam:nth-child(5) {
+  animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* No Blogs State */
+.main:empty::after {
+  content: 'No blogs found.';
+  text-align: center;
+  color: #718096;
+  font-size: 1.2rem;
+  display: block;
+  padding: 60px 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main {
+    padding: 40px 20px;
+  }
+  
+  .popblogs {
+    margin-bottom: 40px;
+  }
+  
+  .popblogs h2 {
+    font-size: 2.3rem;
+  }
+  
+  .mainblogiteam {
+    padding: 25px;
+    margin-bottom: 25px;
+  }
+  
+  .mainblogiteam h2 {
+    font-size: 1.4rem;
+  }
+  
+  .blogsp {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 30px 15px;
+  }
+  
+  .popblogs {
+    margin-bottom: 30px;
+  }
+  
+  .popblogs h2 {
+    font-size: 2rem;
+  }
+  
+  .popblogs h2::after {
+    width: 80px;
+    height: 3px;
+  }
+  
+  .mainblogiteam {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .mainblogiteam h2 {
+    font-size: 1.3rem;
+  }
+  
+  .blogsp {
+    font-size: 0.95rem;
+    -webkit-line-clamp: 4;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .main {
+    background: transparent;
+  }
+  
+  .popblogs h2 {
+    color: #f7fafc;
+  }
+  
+  .mainblogiteam {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+  
+  .mainblogiteam h2 {
+    color: #f7fafc;
+  }
+  
+  .mainblogiteam:hover h2 {
+    color: #667eea;
+  }
+  
+  .blogsp {
+    color: #cbd5e0;
+  }
+  
+  .mainblogiteam:hover {
+    border-color: #667eea;
+    background: #2d3748;
+  }
+}
+
+/* Focus styles for accessibility */
+.mainblogiteam:focus-within {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+.mainblogiteam h2:focus {
+  outline: none;
+}
+
+/* Smooth scrolling */
+.main {
+  scroll-behavior: smooth;
+}
+
+/* Loading animation for initial load */
+@media (prefers-reduced-motion: no-preference) {
+  .mainblogiteam {
+    animation: fadeInUp 0.6s ease-out;
+  }
+}
