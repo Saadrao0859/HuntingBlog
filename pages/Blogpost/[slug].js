@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import styles from "../../styles/BlogPost.module.css";
-import path from "path";
+import fs from "fs";
 
 // step 1: Find the file corresponding to the slug
 //step 2: display the blog post content data
 
-const slug = (props) => {
+const Slug = (props) => {
   function createMarkup(c) {
     return { __html: c };
   }
@@ -27,24 +26,23 @@ const slug = (props) => {
     </div>
   );
 };
-
-export async function getStaticProps(context) {
-  // use params for dynamic routes (not context.query)
-  const { slug } = context.params;
-
-  let data = await fetch(`http://localhost:3000/api/getblog?slug=${slug}`);
-  let myBlog = await data.json();
-  return {
-    props: { myBlog }, // will be passed to the page component as props
-  };
-}
-
-// minimal getStaticPaths so Next.js can build dynamic page
 export async function getStaticPaths() {
   return {
-    paths: [], // no pre-rendered paths
-    fallback: "blocking", // generate pages on demand
+    paths: [
+      { params: { slug: "how-to-learn-JavaScript" } },
+      { params: { slug: "how-to-learn-flask" } },
+      { params: { slug: "how-to-learn-nextjs" } },
+    ],
+    fallback: false,
   };
 }
 
-export default slug;
+export async function getStaticProps(context) {
+  const { slug } = context.params;
+  let myBlog = await fs.promises.readFile(`blogData/${slug}.json`, "utf8");
+  return {
+    props: { myBlog: JSON.parse(myBlog) },
+  };
+}
+
+export default Slug;

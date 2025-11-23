@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
-    "start": "next start"
+    "start": "next start",
+    "lint": " next lint"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
     "next": "^16.0.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-infinite-scroll-component": "^6.1.0"
   }
 }

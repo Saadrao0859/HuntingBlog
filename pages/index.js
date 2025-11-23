@@ -14,7 +14,6 @@ const geistMono = Geist_Mono({
 });
 
 export default function Home() {
-  // console.log(styles);
   return (
     <>
       <Head>
@@ -25,10 +24,7 @@ export default function Home() {
           content="nextjs, huntingcoder blog, hunting coder"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      {/* <Script src="/src.js" strategy="lazyOnload"></Script> */}
-
       <div
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
       >
