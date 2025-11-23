@@ -29,7 +29,7 @@ const Slug = (props) => {
 export async function getStaticPaths() {
   return {
     paths: [
-      { params: { slug: "how-to-learn-JavaScript" } },
+      { params: { slug: "how-to-learn-javascript" } },
       { params: { slug: "how-to-learn-flask" } },
       { params: { slug: "how-to-learn-nextjs" } },
     ],
