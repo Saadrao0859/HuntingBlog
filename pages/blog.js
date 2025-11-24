@@ -19,7 +19,7 @@ const Blog = (props) => {
     <div className={styles.main}>
       <div className={styles.popblogs}>
         <h2>Popular Blogs</h2>
-        <InfiniteScroll
+        {/* <InfiniteScroll
           dataLength={blogs.length}
           next={fetchData}
           hasMore={props.allCount !== blogs.length}
@@ -29,27 +29,27 @@ const Blog = (props) => {
               <b>Yay! You have seen it all</b>
             </p>
           }
-        >
-          {blogs.map((blogitem) => {
-            return (
-              <div key={blogitem.title} className={styles.mainblogiteam}>
-                <Link href={`/Blogpost/${blogitem.slug}`}>
-                  <h2>{blogitem.title}</h2>
-                </Link>
-                <p className={styles.blogsp}>
-                  {" "}
-                  {blogitem.metadesc.substr(0, 160)}
-                </p>
-                <Link
-                  href={`/Blogpost/${blogitem.slug}`}
-                  className={styles.btnhome}
-                >
-                  Learn more
-                </Link>
-              </div>
-            );
-          })}
-        </InfiniteScroll>
+        > */}
+        {blogs.map((blogitem) => {
+          return (
+            <div key={blogitem.title} className={styles.mainblogiteam}>
+              <Link href={`/Blogpost/${blogitem.slug}`}>
+                <h2>{blogitem.title}</h2>
+              </Link>
+              <p className={styles.blogsp}>
+                {" "}
+                {blogitem.metadesc.substr(0, 160)}
+              </p>
+              <Link
+                href={`/Blogpost/${blogitem.slug}`}
+                className={styles.btnhome}
+              >
+                Learn more
+              </Link>
+            </div>
+          );
+        })}
+        {/* </InfiniteScroll> */}
       </div>
     </div>
   );
