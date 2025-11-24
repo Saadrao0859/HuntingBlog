@@ -7,11 +7,11 @@ import InfiniteScroll from "react-infinite-scroll-component";
 //Step 2: Iterate through and display the data
 const Blog = (props) => {
   const [blogs, setBlogs] = React.useState(props.allBlogs);
-  const [count, setcount] = useState(3);
+  const [count, setcount] = useState(2);
 
   const fetchData = async () => {
-    let d = await fetch(`http://localhost:3000/api/blogs?count=${count + 3}`);
-    setcount(count + 3);
+    let d = await fetch(`http://localhost:3000/api/blogs?count=${count + 2}`);
+    setcount(count + 2);
     let data = await d.json();
     setBlogs(data);
   };
@@ -59,7 +59,7 @@ export async function getStaticProps(context) {
   let allCount = data.length;
   let myfile;
   let allBlogs = [];
-  for (let index = 0; index < 2; index++) {
+  for (let index = 0; index < 3; index++) {
     const item = data[index];
     myfile = await fs.promises.readFile(`blogData/` + item, "utf-8");
     allBlogs.push(JSON.parse(myfile));
