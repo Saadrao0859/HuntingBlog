@@ -1,0 +1,8 @@
+{
+    "title": "How to learn reactJs",
+    "content": "Next.js is a powerful React framework that enables server-side rendering and static site generation. To learn Next.js effectively, begin by understanding the fundamentals of React, including components, state, and props. Once comfortable with React, explore Next.js features such as file-based routing, API routes, and data fetching methods like getStaticProps and getServerSideProps. Practice building small projects to apply these concepts. Utilize the official Next.js documentation, tutorials, and community resources to deepen your knowledge. Consistent practice and experimentation will help you master Next.js development.",
+    "author": "john doe",
+    "metadesc": "Learn Next Js step by step with practical examples and tips.",
+    "slug": "how-to-learn-react",
+    "date": "2024-06-15"
+}
