@@ -4,7 +4,6 @@ import styles from "../styles/Contact.module.css";
 const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, email, phone, desc);
     const data = { name, email, phone, desc };
     fetch("http://localhost:3000/api/postcontact", {
       method: "POST",
@@ -13,7 +12,6 @@ const Contact = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("Success:", data);
         alert("Thanks for contacting us!");
         setPhone("");
         setName("");
@@ -35,7 +33,6 @@ const Contact = () => {
     } else if (e.target.name == "desc") {
       setDesc(e.target.value);
     }
-    console.log(e, "change");
   };
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
