@@ -294,3 +294,35 @@ textarea.formlabel:focus {
     animation: none;
   }
 }
+
+
+
+
+
+.error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  border: 1px solid #000000;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.formtext {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+.btnprimary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
